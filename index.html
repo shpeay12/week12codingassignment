@@ -1,0 +1,154 @@
+<!--
+    Create a full CRUD application of your choice using an API or JSON Server.
+    Use JQuery/AJAX to interact with the API. 
+    Use a form to post new entities.
+    Build a way for users to update or delete entities.
+    Include a way to get entities from the API.
+    Use Bootstrap and CSS to style your project.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="manager.css" rel="stylesheet"/>
+    <title>School Bus Manager</title>
+</head>
+<body class="container bg-warning">
+    <div class="container">
+        <h1 id="title-heading" class="text-center">School Bus Manager</h1>
+    </div>
+
+    <div class="container">
+        <img class="mx-auto d-block" id="header-image" src="https://www.ncelectriccooperatives.com/wp-content/uploads/2023/02/electric-bus-randolph-county-scaled.jpg">
+    </div>
+
+    <div class="container">
+        <h2 class="text-center">Welcome! Add a school bus or student information using the form below</h2>
+    </div>
+     <hr />
+
+    <!--New Bus Form-->
+    <div class="container">
+        <div class="card bg-light">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="form-group">
+                            <label for="new-bus-number">New Bus Number</label>
+                            <input type="number" class="form-control" placeholder="Enter Your Bus Number Here" id="new-bus-number">
+                        </div>
+                        <br>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <button id="add-new-bus" class="btn btn-primary form-control">Add New Bus</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+
+
+    <div class="container"> <!--Form to create a student-->
+        <div class="card bg-light">
+            <div class="card-body">
+                <div class="row">
+                    <div class="row">
+                            <select id="busDropdownForAddingStudent" class="form-select m2" aria-label="Select Bus">
+                                <option value="">Click to Select Bus Number</option>
+                            </select>
+                            <ul id="studentList"></ul>
+                        </div>
+                        <div class="col-sm">
+                            <label for="student-name">Student Name</label>
+                            <input type="text" class="form-control" placeholder="Student Name" id="student-name">
+                        </div>
+                            <div class="col-sm">
+                                <label for="student-address">Student Address</label>
+                                <input type="text" class="form-control" placeholder="Student Address" id="student-address">
+                            </div>
+                            <div class="col-sm">
+                                <label for="pickup">Pickup Time</label>
+                                <input type="text" class="form-control" placeholder="Pickup Time" id="pickup">
+                            </div>
+                            <div class="col-sm">
+                                <label for="dropoff">Dropoff Time</label>
+                                <input type="text" class="form-control" placeholder="Drop-off Time" id="dropoff">
+                            </div>
+                            <div class="col-sm">
+                                <label for="phone-number">Phone Number</label>
+                                <input type="text" class="form-control" placeholder="Phone Number" id="phone-number">
+                            </div>
+                            <div class="col-sm">
+                                <label for="school">School</label>
+                                <input type="text" class="form-control" placeholder="School Name" id="school">
+                            </div>
+                            <div class="col-sm">
+                                <label for="grade">Grade</label>
+                                <input type="text" class="form-control" id="grade">
+                            </div> <br>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="form-group">
+                                <button id="add-student" class="btn btn-primary form-control">Add Student</button> <!--Button created-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+
+    <div class="container">
+        <h2>Selected Bus: </h2>
+        <select id="busDropdown" class="form-select m2" aria-label="Select Bus">
+            <option value="">Click to Select Bus Number</option>
+        </select>
+        <ul id="studentList"></ul>
+    </div>
+
+    <div class="container">
+        <p>To edit: Click the edit student button, enter new student information, click "Add Student," refresh page, delete old student</p>
+    </div>
+
+
+    <div id="content" class="container">
+        <table id="students" class="table table-dark">
+            <thead>
+                <th class="col-2 text-light">Student Name</th>
+                <th class="col-3 text-light">Student Address</th>
+                <th class="col-1 text-light">Pickup Time</th>
+                <th class="col-1 text-light">Drop-Off Time</th>
+                <th class="col-1 text-light">Phone Number</th>
+                <th class="col-1 text-light">School</th>
+                <th class="col-1 text-light">Grade</th>
+                <th class="col-3 text-light">Edit/Delete</th>
+            </thead>
+            <tbody>
+                <!--Rows will be added here.-->
+            </tbody>
+        </table>
+    </div>
+
+
+    
+    
+
+
+
+    
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="schoolbus.js"></script>
+</body>
+</html> 
